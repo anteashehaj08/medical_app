@@ -11,12 +11,13 @@ import java.time.LocalDate;
 public class Prescription {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "prescription_id")
+    @Column(name = "id")
     private Long prescriptionId;
     @OneToOne
-    @JoinColumn(name = "appointment_id_prescription")
+    @JoinColumn(name = "prescription_id")
     private Appointment appointment;
     @Column(name = "prescription_date")
     private LocalDate prescriptionDate;
     private String medicines;
 }
+
