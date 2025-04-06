@@ -8,40 +8,40 @@ import java.util.List;
 
 public class GenericDao<T, ID> {
     private final Session session;
-    private Transaction tx;
-    private final Class<T> clazz;
+    private Transaction transaction;
+    private final Class<T> aClasss;
     public GenericDao(Session session, Class<T> clazz) {
         this.session = session;
-        this.clazz = clazz;
+        this.aClasss = clazz;
     }
     public T save(T entity) {
-        this.tx=session.beginTransaction();
+        this.transaction =session.beginTransaction();
         try {
             T saved = (T) session.merge(entity);
-            tx.commit();
+            transaction.commit();
             return saved;
         }catch (Exception e){
-            tx.rollback();
+            transaction.rollback();
             throw new RuntimeException(e);
         }
     }
     protected T findById(ID id) {
-        return (T) session.find(clazz, id);
+        return (T) session.find(aClasss, id);
     }
     protected List<T> findAll() {
-        String query = String.format("select e from %s e", clazz.getSimpleName());
-        Query<T> findAllQuery = session.createQuery(query, clazz);
+        String query = String.format("select e from %s e", aClasss.getSimpleName());
+        Query<T> findAllQuery = session.createQuery(query, aClasss);
         return findAllQuery.getResultList();
     }
 
     public void delete(ID id){
-        this.tx=session.beginTransaction();
+        this.transaction =session.beginTransaction();
         try {
             T entity = this.findById(id);
             session.remove(entity);
-            tx.commit();
+            transaction.commit();
         }catch (Exception e){
-            tx.rollback();
+            transaction.rollback();
             throw new RuntimeException(e);
         }
     }
