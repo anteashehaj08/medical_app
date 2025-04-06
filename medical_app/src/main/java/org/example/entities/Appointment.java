@@ -15,7 +15,7 @@ public class Appointment {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private Long appointmentId;
-    @Column(name = "patient_id")
+    @Column(name = "patients_id")
     @OneToMany(mappedBy = "appointment_id")
     private List<Patients> patient;
     @OneToMany (mappedBy = "appointment_id_doctor")

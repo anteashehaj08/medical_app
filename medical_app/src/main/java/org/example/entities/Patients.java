@@ -12,7 +12,7 @@ public class Patients {
 @Id
 @GeneratedValue(strategy = GenerationType.IDENTITY)
 @Column(name="patients_id")
-private Long ID;
+private Long Id;
 @Column(name="first_name")
     private String firstName;
 @Column(name="last_name")
