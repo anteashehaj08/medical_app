@@ -25,6 +25,6 @@ private Long ID;
 @Column(name="medical_history")
     private String medicalHistory;
 @ManyToOne
-    @JoinColumn(name = "appointment_id")
+@JoinColumn(name = "appointment_id")
     private Appointment appointment;
 }

@@ -5,6 +5,7 @@ import lombok.Data;
 import org.example.staticData.AppointmentStatus;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Entity
 @Table(name = "appointments")
@@ -14,12 +15,11 @@ public class Appointment {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private Long appointmentId;
-    @Column(name = "patinet_id")
-    @OneToMany
-    private Patient patient;
-    @ManyToOne
-    @JoinColumn(name = "doctor_id")
-    private Doctor doctor;
+    @Column(name = "patient_id")
+    @OneToMany(mappedBy = "appointment_id")
+    private List<Patients> patient;
+    @OneToMany (mappedBy = "appointment_id_doctor")
+    private List<Doctor> doctor;
     @Column(name = "appointment_time")
     private LocalDateTime appointmentTime;
     private String purpose;
