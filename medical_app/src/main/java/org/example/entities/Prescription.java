@@ -14,7 +14,7 @@ public class Prescription {
     @Column(name = "id")
     private Long prescriptionId;
     @OneToOne
-    @JoinColumn(name = "prescription_id")
+    @JoinColumn(name = "appointment_id")
     private Appointment appointment;
     @Column(name = "prescription_date")
     private LocalDate prescriptionDate;

@@ -3,6 +3,7 @@ package org.example.entities;
 import jakarta.persistence.*;
 import lombok.Data;
 
+import java.time.LocalDate;
 import java.util.List;
 
 
@@ -20,15 +21,14 @@ private Long patientId;
 @Column(name="last_name")
     private String lastName;
 @Column(name = "birth_date")
-    private Long birthDate;
-    private Long NID;
+    private LocalDate birthDate;
+    private String NID;
 @Column(name ="contact_info")
-    private Long contactInfo;
+    private String contactInfo;
 @Column(name="medical_history")
     private String medicalHistory;
-@ManyToOne
-@JoinColumn(name = "patient_id")
-    private Appointment appointment;
-@OneToMany(mappedBy = "payment_id")
+@OneToMany(mappedBy = "patient")
+    private List<Appointment> appointment;
+@OneToMany(mappedBy = "patients")
     private List<Payments> payments;
 }
