@@ -3,6 +3,8 @@ package org.example.entities;
 import jakarta.persistence.*;
 import lombok.Data;
 
+import java.util.List;
+
 
 @Data
 @Entity
@@ -27,4 +29,6 @@ private Long Id;
 @ManyToOne
 @JoinColumn(name = "appointment_id")
     private Appointment appointment;
+@OneToMany(mappedBy = "patients_id_payments")
+    private List<Payments> payments;
 }
