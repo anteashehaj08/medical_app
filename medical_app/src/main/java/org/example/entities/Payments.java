@@ -13,10 +13,10 @@ import java.time.LocalDate;
 public class Payments {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "payments_id")
-    private Long ID;
+    @Column(name = "id")
+    private Long paymentId;
     @ManyToOne
-    @JoinColumn(name="patients_id_payments")
+    @JoinColumn(name="patient_id")
     private Patients patients;
     @Column(name="payment_date")
     private LocalDate paymentDate;

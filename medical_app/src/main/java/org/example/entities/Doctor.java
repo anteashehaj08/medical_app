@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import lombok.Data;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Entity
 @Table(name = "doctors")
@@ -24,7 +25,6 @@ public class Doctor {
     private LocalDateTime startWorkAt;
     @Column(name = "end_work_at")
     private LocalDateTime endWorkAt;
-    @ManyToOne
-    @JoinColumn(name = "doctor_id")
-    private Appointment appointment;
+    @OneToMany (mappedBy = "doctor")
+    private List<Appointment> appointment;
 }

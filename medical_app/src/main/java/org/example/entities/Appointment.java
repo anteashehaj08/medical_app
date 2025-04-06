@@ -15,10 +15,12 @@ public class Appointment {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private Long appointmentId;
-    @OneToMany(mappedBy = "patient_id")
-    private List<Patients> patient;
-    @OneToMany (mappedBy = "doctor_id")
-    private List<Doctor> doctor;
+    @ManyToOne
+    @JoinColumn(name="patient_id")
+    private Patients patient;
+    @ManyToOne
+    @JoinColumn(name="doctor_id")
+    private Doctor doctor;
     @Column(name = "appointment_time")
     private LocalDateTime appointmentTime;
     private String purpose;
