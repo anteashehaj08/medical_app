@@ -13,8 +13,8 @@ import java.util.List;
 public class Patients {
 @Id
 @GeneratedValue(strategy = GenerationType.IDENTITY)
-@Column(name="patients_id")
-private Long Id;
+@Column(name="id")
+private Long patientId;
 @Column(name="first_name")
     private String firstName;
 @Column(name="last_name")
@@ -27,8 +27,8 @@ private Long Id;
 @Column(name="medical_history")
     private String medicalHistory;
 @ManyToOne
-@JoinColumn(name = "appointment_id")
+@JoinColumn(name = "patient_id")
     private Appointment appointment;
-@OneToMany(mappedBy = "patients_id_payments")
+@OneToMany(mappedBy = "payment_id")
     private List<Payments> payments;
 }

@@ -25,6 +25,6 @@ public class Doctor {
     @Column(name = "end_work_at")
     private LocalDateTime endWorkAt;
     @ManyToOne
-    @JoinColumn(name = "appointment_id_doctor")
+    @JoinColumn(name = "doctor_id")
     private Appointment appointment;
 }
