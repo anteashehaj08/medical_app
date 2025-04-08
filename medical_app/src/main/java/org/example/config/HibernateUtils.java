@@ -1,8 +1,6 @@
 package org.example.config;
 
-import org.example.entities.Appointment;
-import org.example.entities.Doctor;
-import org.example.entities.Patients;
+import org.example.entities.*;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 
@@ -15,6 +13,8 @@ public class HibernateUtils {
             config.addAnnotatedClass(Patients.class);
             config.addAnnotatedClass(Doctor.class);
             config.addAnnotatedClass(Appointment.class);
+            config.addAnnotatedClass(Prescription.class);
+            config.addAnnotatedClass(Payments.class);
            return config.buildSessionFactory();
         }
         return this.sessionFactory;
