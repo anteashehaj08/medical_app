@@ -46,7 +46,7 @@ public class GenericDao<T, ID> {
         }
     }
 
-    protected List<T> findByString(String fieldName, Object value) {
+    protected List<T> findByFieldName(String fieldName, Object value) {
         String query = String.format("select e from %s e where e.%s = :value", aClasss.getSimpleName(), fieldName);
         Query<T> findAllQuery = session.createQuery(query, aClasss);
         findAllQuery.setParameter("value", value);

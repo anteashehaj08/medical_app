@@ -26,15 +26,15 @@ public class PatientDao extends GenericDao<Patients, Long> {
         return super.findAll();
     }
     public List<Patients> findByPatientName(String firstName) {
-        return super.findByString("firstName", firstName);
+        return super.findByFieldName("firstName", firstName);
     }
 
     public List<Patients> findByPatientSurname(String lastName) {
-        return super.findByString("lastName", lastName);
+        return super.findByFieldName("lastName", lastName);
     }
 
     public List<Patients> findByPatientEmail(String contactInfo) {
-        return super.findByString("contactInfo", contactInfo);
+        return super.findByFieldName("contactInfo", contactInfo);
     }
 
 }

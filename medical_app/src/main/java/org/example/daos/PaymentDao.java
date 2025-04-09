@@ -28,5 +28,7 @@ public class PaymentDao extends GenericDao<Payments, Long> {
     public List<Payments> findAll() {
         return super.findAll();
     }
-
+    public List<Payments>findPatientPayments(Patients patient) {
+        return  super.findByFieldName("patients", patient);
+    }
 }

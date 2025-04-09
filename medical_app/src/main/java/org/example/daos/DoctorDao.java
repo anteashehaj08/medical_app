@@ -26,6 +26,6 @@ public class DoctorDao extends GenericDao<Doctor, Long>{
         return super.findAll();
     }
     public List<Doctor> findBySpecialization(String specialization) {
-        return super.findByString("specialization", specialization);
+        return super.findByFieldName("specialization", specialization);
     }
 }
