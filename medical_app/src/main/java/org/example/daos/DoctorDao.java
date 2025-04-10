@@ -3,6 +3,7 @@ package org.example.daos;
 import org.example.entities.Doctor;
 import org.hibernate.Session;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 public class DoctorDao extends GenericDao<Doctor, Long>{
@@ -27,5 +28,9 @@ public class DoctorDao extends GenericDao<Doctor, Long>{
     }
     public List<Doctor> findBySpecialization(String specialization) {
         return super.findByFieldName("specialization", specialization);
+    }
+    public void saveOrUpdateWorkHours(Doctor doctor, LocalDateTime workBegin, LocalDateTime workEnd){
+        doctor.setStartWorkAt(workBegin);
+        doctor.setEndWorkAt(workEnd);
     }
 }
