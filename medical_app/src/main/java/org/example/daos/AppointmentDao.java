@@ -2,6 +2,7 @@ package org.example.daos;
 
 import org.example.entities.Appointment;
 import org.example.entities.Payments;
+import org.example.staticData.AppointmentStatus;
 import org.hibernate.Session;
 
 public class AppointmentDao extends GenericDao<Appointment, Long> {
@@ -19,6 +20,10 @@ public class AppointmentDao extends GenericDao<Appointment, Long> {
     public Appointment update(Appointment appointment) {
         return this.save(appointment);
     }
-
+    public void delete(Appointment appointment) {
+        if (appointment.getStatus() == AppointmentStatus.CANCELLED) {
+            this.session.delete(appointment);
+        }
+    }
 
 }
