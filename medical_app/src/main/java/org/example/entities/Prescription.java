@@ -19,5 +19,6 @@ public class Prescription {
     @Column(name = "prescription_date")
     private LocalDate prescriptionDate;
     private String medicines;
+
 }
 

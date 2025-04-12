@@ -1,9 +1,11 @@
 package org.example.entities;
 
-import jakarta.persistence.*;
+
 import lombok.Data;
 
+import jakarta.persistence.*;
 import java.time.LocalDateTime;
+import java.time.LocalTime;
 import java.util.List;
 
 @Entity
@@ -22,9 +24,9 @@ public class Doctor {
     @Column(name = "contact_info")
     private String contactInfo;
     @Column(name = "start_work_at")
-    private LocalDateTime startWorkAt;
+    private LocalTime startWorkAt;
     @Column(name = "end_work_at")
-    private LocalDateTime endWorkAt;
-    @OneToMany (mappedBy = "doctor")
-    private List<Appointment> appointment;
+    private LocalTime endWorkAt;
+    @OneToMany(mappedBy = "doctor")
+    private List<Appointment> appointments;
 }
