@@ -39,4 +39,3 @@ public class PatientDao extends GenericDao<Patients, Long> {
     }
     }
 
-}

@@ -2,7 +2,6 @@ package org.example.daos;
 
 
 
-import org.example.entities.Doctor;
 import org.example.entities.Report;
 import org.hibernate.Session;
 import org.hibernate.query.Query;
