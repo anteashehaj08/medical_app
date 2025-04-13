@@ -29,4 +29,9 @@ public class Doctor {
     private LocalTime endWorkAt;
     @OneToMany(mappedBy = "doctor")
     private List<Appointment> appointments;
+    @ManyToMany
+    @JoinColumn(name="id")
+    private List<Patients> patients;
+    @OneToMany(mappedBy = "doctor")
+    private List<Report> report;
 }
