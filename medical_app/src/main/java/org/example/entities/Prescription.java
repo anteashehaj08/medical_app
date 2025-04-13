@@ -18,7 +18,6 @@ public class Prescription {
     private Appointment appointment;
     @Column(name = "prescription_date")
     private LocalDate prescriptionDate;
-    private String medicines;
-
+    /*private String medicines;*/
 }
 

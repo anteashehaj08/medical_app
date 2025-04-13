@@ -1,8 +1,6 @@
 package org.example.daos;
 import org.example.entities.Patients;
-import org.example.entities.Report;
 import org.hibernate.Session;
-import org.hibernate.query.Query;
 
 import java.util.List;
 

@@ -1,3 +1,4 @@
+/*
 package org.example.daos;
 
 import org.example.entities.Medicine;
@@ -23,3 +24,4 @@ public class MedicineDao extends GenericDao<Medicine,Long>{
         return this.save(medicine);
     }
 }
+*/

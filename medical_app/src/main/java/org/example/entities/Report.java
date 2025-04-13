@@ -1,3 +1,4 @@
+/*
 package org.example.entities;
 
 import jakarta.persistence.*;
@@ -17,3 +18,4 @@ public class Report {
     private Patients patient;
     private Long reportNr;
 }
+*/

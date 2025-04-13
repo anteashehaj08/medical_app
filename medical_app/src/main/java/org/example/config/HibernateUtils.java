@@ -15,6 +15,8 @@ public class HibernateUtils {
             config.addAnnotatedClass(Appointment.class);
             config.addAnnotatedClass(Prescription.class);
             config.addAnnotatedClass(Payments.class);
+         /*   config.addAnnotatedClass(Medicine.class);
+            config.addAnnotatedClass(Report.class);*/
            return config.buildSessionFactory();
         }
         return this.sessionFactory;

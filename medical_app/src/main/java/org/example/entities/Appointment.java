@@ -26,8 +26,8 @@ public class Appointment {
     private String purpose;
     @Enumerated(value = EnumType.STRING)
     private AppointmentStatus status;
-    @OneToMany(mappedBy = "appointment")
-    private List<Medicine> medicines;
+/*    @OneToMany(mappedBy = "appointment")
+    private List<Medicine> medicines;*/
     @OneToOne
     @JoinColumn(name="prescription_id")
     private Prescription prescription;

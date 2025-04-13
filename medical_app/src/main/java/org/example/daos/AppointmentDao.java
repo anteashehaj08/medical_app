@@ -1,7 +1,6 @@
 package org.example.daos;
 
 import org.example.entities.Appointment;
-import org.example.entities.Payments;
 import org.example.staticData.AppointmentStatus;
 import org.hibernate.Session;
 

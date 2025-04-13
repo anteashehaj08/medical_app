@@ -1,3 +1,4 @@
+/*
 package org.example.daos;
 
 
@@ -24,3 +25,4 @@ public class ReportDao extends GenericDao<Report, Long> {
         }
     }
 
+*/

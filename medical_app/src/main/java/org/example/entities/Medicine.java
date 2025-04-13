@@ -1,3 +1,4 @@
+/*
 package org.example.entities;
 
 import jakarta.persistence.*;
@@ -23,3 +24,4 @@ public class Medicine {
     @JoinColumn(name="appointment_id")
     private Appointment appointment;
 }
+*/

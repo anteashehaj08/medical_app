@@ -1,6 +1,5 @@
 package org.example.daos;
 import org.example.entities.Appointment;
-import org.example.entities.Medicine;
 import org.example.entities.Prescription;
 import org.hibernate.Session;
 import org.hibernate.query.Query;
@@ -31,12 +30,12 @@ public class PrescriptionDao extends GenericDao<Prescription, Long> {
     }
 
 
-    public List<Prescription> findByAppointmentTime(LocalDateTime appointmentTime) {
+    /*public List<Prescription> findByAppointmentTime(LocalDateTime appointmentTime) {
         String query = "select p from Prescription p where p.appointment.appointmentTime = :appointmentTime";
         Query<Prescription> queryFindByPrescriptionDate = session.createQuery(query, Prescription.class);
         queryFindByPrescriptionDate.setParameter("appointment_time", appointmentTime);
         return queryFindByPrescriptionDate.getResultList();
-    }
+    }*/
     }
 
 
