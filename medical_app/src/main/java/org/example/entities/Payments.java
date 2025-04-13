@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import lombok.Data;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 @Data
 @Entity
@@ -16,8 +17,8 @@ public class Payments {
     @Column(name = "id")
     private Long paymentId;
     @ManyToOne
-    @JoinColumn(name="patient_id")
-    private Patients patients;
+    @JoinColumn(name = "patient_id")
+    protected Patients patients;
     @Column(name="payment_date")
     private LocalDate paymentDate;
     private Double amount;
