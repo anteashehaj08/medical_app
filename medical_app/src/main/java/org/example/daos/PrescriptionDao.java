@@ -18,7 +18,7 @@ public class PrescriptionDao extends GenericDao<Prescription, Long> {
     }
 
     public List<Prescription> findByPatientId(Long patientId) {
-        String query = "from Prescription p where p.appointment.patient.patientId = :patientId";
+        String query = "select p from Prescription p where p.appointment.patient.patientId = :patientId";
         Query<Prescription> queryFindByPatient = session.createQuery(query, Prescription.class);
         queryFindByPatient.setParameter("patientId", patientId);
         return queryFindByPatient.getResultList();
