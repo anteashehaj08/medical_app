@@ -30,11 +30,9 @@ public class PrescriptionDao extends GenericDao<Prescription, Long> {
         return super.save(prescription);
     }
 
-    //public List<Prescription> findByMedicineId(Long medicineId) {
-   //     return super.findAll();
-    //}
+
     public List<Prescription> findByAppointmentTime(LocalDateTime appointmentTime) {
-        String query = "from Prescription p where p.appointment.appointmentTime = :appointmentTime";
+        String query = "select p from Prescription p where p.appointment.appointmentTime = :appointmentTime";
         Query<Prescription> queryFindByPrescriptionDate = session.createQuery(query, Prescription.class);
         queryFindByPrescriptionDate.setParameter("appointment_time", appointmentTime);
         return queryFindByPrescriptionDate.getResultList();

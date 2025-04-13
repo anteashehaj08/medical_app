@@ -18,7 +18,7 @@ public class Payments {
     private Long paymentId;
     @ManyToOne
     @JoinColumn(name = "patient_id")
-    protected Patients patients;
+    private Patients patients;
     @Column(name="payment_date")
     private LocalDate paymentDate;
     private Double amount;

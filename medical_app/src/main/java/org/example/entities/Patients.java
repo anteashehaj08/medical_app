@@ -31,5 +31,7 @@ public class Patients {
     private List<Appointment> appointment;
     @OneToMany(mappedBy = "patients")
     private List<Payments> payments;
-
+    @ManyToMany
+    @JoinColumn (name="doctor_id")
+    private List<Doctor> doctor;
 }

@@ -12,6 +12,7 @@ public class Main {
         HibernateUtils hibernateUtils = new HibernateUtils();
         SessionFactory sessionFactory = hibernateUtils.getSessionFactory();
         Session session = sessionFactory.openSession();
+
         PatientDao patientDao = new PatientDao(session);
         }
     }
